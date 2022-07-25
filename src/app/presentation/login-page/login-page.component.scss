@@ -1,0 +1,112 @@
+.login-page {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.login-page__background,
+.login-page__video, .login-page__video video {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.login-page__background {
+    opacity: 0;
+    transition: all 0.2s ease;
+}
+
+.login-page__background--ready.login-page__background--hide {
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+
+.login-page__background--ready {
+    opacity: 1;
+    transition: all 0.4s ease;
+}
+
+.login-page__content {
+    display: flex;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+.login-page__editorial {
+    flex: 1;
+    max-width: 50%;
+    transition: all 2s;
+    app-editorial {
+        display: block;
+        padding: 2.5rem;
+    }
+}
+
+.login-page__editorial--done{
+    transition: all 2s;
+    padding: 1.5rem;
+    //background-color: #31393F;
+    //color: white;
+    font-weight: bold;
+
+    span {
+        text-decoration: underline;
+        cursor: pointer;
+        font-size: 0.8rem;
+        font-weight: normal;
+        display: inline-block;
+        margin-top: 2rem;
+    }
+}
+
+.login-page__form {
+    opacity: 0;
+    background-color: white;
+    max-width: 45%;
+    min-width: 450px;
+    transition: all 0.3s ease-out;
+    box-shadow: -34px 0px 38px -7px rgb(0 0 0 / 34%), 34px 0px 38px -7px rgb(0 0 0 / 34%);
+
+    // margin-top: 6rem;
+    // border-radius: 1rem;
+    // margin-bottom: 6rem;
+
+    app-login-form {
+        display: block;
+        padding: 5rem;
+        padding-top: 2.5rem;
+    }
+}
+
+.login-page__form--ready {
+    opacity: 1;
+    transition: all 0.5s ease-in;
+}
+
+.login-page__form--loading {
+    margin-top: 3rem;
+    margin-bottom: 20rem;
+    border-radius: 8px;
+    transition: all 0.3s ease-in; /* quick 'all' for demo - non prod */
+}
+
+.login-page__form--done {
+    //position: absolute;
+    left: 0; 
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: 0;
+    border-radius: 0;
+    max-width: 100%;
+    min-width: 100%;
+    box-shadow: -10px 0px 16px -7px rgb(0 0 0 / 34%), 10px 0px 16px -7px rgb(0 0 0 / 34%);
+    transition: all 0.3s ease-in; /* quick 'all' for demo - non prod */
+}
+
+.login-page__video {
+    video {
+      object-fit: cover;
+    }
+  }

@@ -1,0 +1,13 @@
+<div class="editorial" *ngIf="config">
+  <div class="editorial-copy">
+    <h1>{{config.heading}}</h1>
+    <p [innerHTML]="config.text"></p>
+  </div>
+  <div class="editorial-image" *ngIf="config.image">
+    <img [src]="config.image"/>
+  </div>
+</div>
+
+<div class="login-page" *ngIf="!config">
+  <pre>Developer: Presentation/Editorial: No config Provided.</pre>
+</div>

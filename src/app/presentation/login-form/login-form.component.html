@@ -1,0 +1,49 @@
+
+<div class="login-form" *ngIf="config && shouldShowForm">
+  <div class="login-form-introduction" *ngIf="config.title || config.info">
+    <h2 *ngIf="config.title">{{config.title}}</h2>
+    <p *ngIf="config.info">{{config.info}}</p>
+  </div>
+  <form class="login-form__form" (submit)="login()">
+    <div class="login-form__form__username">
+      <label for="login-form__username">{{config.username.label}}</label>
+      <input 
+        type="text" 
+        id="login-form__username"
+        [name]="config.username.name"
+        [placeholder]="config.username.placeholder"
+        [(ngModel)]="config.username.value"/>
+    </div>
+    <div class="login-form__form__password">
+      <label for="login-form__username">{{config.password.label}}</label>
+      <input 
+        type="text" 
+        id="login-form__password" 
+        [placeholder]="config.password.placeholder"
+        [name]="config.password.name"
+        [(ngModel)]="config.password.value"/>
+        <div class="login-form__forgot">
+          <span>resend passcode</span>
+        </div>
+    </div>
+
+    <div class="login-form__form__actions">
+      <input type="submit" [value]="config.action.label"/>
+    </div>
+  </form>
+  <div class="login-form___company">
+    <div class="login-form__logo">
+      <img src="assets/sensory-logo.png"/>
+    </div>
+  </div>
+</div>
+
+<div class="login-form" *ngIf="config?.busy">
+  <div class="login-form__loading">
+    <app-loader></app-loader>
+  </div>
+</div>
+
+<div class="login-form" *ngIf="!config">
+ <pre>Developer: Presentation/Login Form: No config Provided.</pre>
+</div>

@@ -1,0 +1,62 @@
+.login-form {}
+
+.login-form-introduction {
+  h2  {
+    margin: 0;
+    padding: 0;
+    color: #b53c1a;
+  }
+  p {
+    margin: 0;
+    padding: 0;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+.login-form__form  {
+  display: block;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.login-form__form__username  {
+  margin-bottom: 1.5rem;
+  width: 80%;
+}
+label  {
+  display: none;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.login-form__forgot {
+  text-align: right;
+  margin-top: 1rem;
+}
+.login-form__forgot span {
+  cursor: pointer;
+  color: #b53c1a;
+  border-bottom: 1px solid #b53c1a;
+  font-size: 0.8rem;
+}
+
+.login-form__form__password  {
+  margin-bottom: 1.5rem;
+  width: 80%;
+}
+
+.login-form__form__actions {
+  width: 80%;
+  input {
+    cursor: pointer;
+  }
+}
+
+.login-form__loading {
+  margin-top: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.9;
+}

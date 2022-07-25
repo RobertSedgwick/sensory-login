@@ -1,0 +1,41 @@
+<div class="login-page" *ngIf="config">
+  <div class="login-page__background"
+  [ngClass]="{
+    'login-page__background--hide': config.loginForm.done,
+    'login-page__background--ready': ready
+  }">
+    <div class="login-page__video" *ngIf="config.background?.video">
+      <!-- poster="/images/w3html5.gif" -->
+      <video #videoPlayer muted="true" autoplay="true">
+        <source [src]="config.background?.video" type="video/mp4">
+      Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+
+  <div class="login-page__content">
+    <div class="login-page__editorial" *ngIf="shouldShowEditorial">
+      <app-editorial [config]="config.editorial"></app-editorial>
+    </div>
+
+    <div class="login-page__editorial" 
+    [ngClass]="{'login-page__editorial--done': config.loginForm.done}" *ngIf="shouldShowApplication">
+      APP_INIT
+      <span (click)="startOver()">Start over</span>
+    </div>
+
+    <div class="login-page__form" 
+      [ngClass]="{
+        'login-page__form--ready': ready, 
+        'login-page__form--loading': config.loginForm.busy,
+        'login-page__form--done': config.loginForm.done
+      }">
+      <app-login-form [config]="config.loginForm"></app-login-form>
+    </div>
+  </div>
+
+</div>
+
+<div class="login-page" *ngIf="!config">
+  <pre>Developer: Presentation/Login Page: No config Provided.</pre>
+ </div>
